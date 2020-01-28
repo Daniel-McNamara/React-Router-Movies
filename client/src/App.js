@@ -6,11 +6,12 @@ import Movie from './Movies/Movie';
 import axios from 'axios';
 
 const App = () => {
+  /*saved list*/
   const [savedList, setSavedList] = useState( [] );
-
   const addToSavedList = movie => {
     setSavedList( [...savedList, movie] );
   };
+
    /* movie data for props*/
    const [movies, setMovies] = useState([]);
    useEffect(() => {
@@ -36,7 +37,7 @@ const App = () => {
         <Route exact path="/">
           <MovieList movies={movies} />
         </Route>
-        <Route path="/movies/:movieId">
+        <Route path="/movies/:movieID">
           <Movie movies={movies}/>
         </Route>
       </div>
